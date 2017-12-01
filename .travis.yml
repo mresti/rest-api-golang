@@ -1,0 +1,14 @@
+sudo: false
+language: go
+go:
+  - 1.8.x
+  - 1.9.x
+  - tip
+matrix:
+  allow_failures:
+    - go: tip
+  fast_finish: true
+
+script:
+  - make                 # Run format code, run tests and build code
+  - make integrationtest # Run integration tests
